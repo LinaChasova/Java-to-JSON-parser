@@ -1,0 +1,4 @@
+C:\Users\Ford\.CLion2018.2\system\cygwin_cmake\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /cygdrive/c/Users/Ford/CLionProjects/hw3/lex-yacc-template
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /cygdrive/c/Users/Ford/CLionProjects/hw3/lex-yacc-template/cmake-build-debug
