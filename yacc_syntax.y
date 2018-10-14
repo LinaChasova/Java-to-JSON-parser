@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "JSON.cpp"
 
 extern int yydebug;  // TODO: REMOVE IN PROD, 'yacc' it with -t flag.
 extern int yylex();
@@ -108,24 +109,46 @@ char const *yyerror(const char *str);
 %left ASTERISK  SLASH           BACKSLASH                 // Multiplicative operations
 %nonassoc LOWER_THAN_LPAREN  // Pseudo-token for prioritizing the routine call in PostfixExpression
 %right LPAREN
-//%%
+
+%type <std::string> CompilationUnit
+%type <std::string> PackageDeclaration
+%type <std::string> ImportDeclarations
+%type <std::string> TypeDeclarations
+
+
 
 %%
 
 
 CompilationUnit
     : PackageDeclaration ImportDeclarations TypeDeclarations
+    {
+        json = format("[Me: 'CompilationUnit', MyPackages: '%s', MyImports: '%s', TypeDecls: '%s']",
+                        $1, $2, $3);
+    }
     ;
 
 PackageDeclaration
     :
     | PACKAGE PackageName SEPARATOR
+        {
+            $$ = format("[Me: PackageDeclaration]");
+        }
     ;
 
 ImportDeclarations
     :
+        {
+                $$ = format("[Me: Import]");
+        }
     | ImportDeclaration
+        {
+                $$ = format("[Me: Import]");
+        }
     | ImportDeclarations ImportDeclaration
+        {
+                $$ = format("[Me: Import]");
+        }
     ;
 
 ImportDeclaration
@@ -134,8 +157,17 @@ ImportDeclaration
 
 TypeDeclarations
     :
+    {
+            $$ = format("[Me: Decl]");
+    }
     | TypeDeclaration
+    {
+            $$ = format("[Me: Decl]");
+    }
     | TypeDeclarations TypeDeclaration
+    {
+            $$ = format("[Me: Decl]");
+    }
     ;
 
 TypeDeclaration
