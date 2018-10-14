@@ -5,7 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
   "/cygdrive/c/Users/Ford/CLionProjects/hw3/lex-yacc-template/lex.yy.c" "/cygdrive/c/Users/Ford/CLionProjects/hw3/lex-yacc-template/cmake-build-debug/CMakeFiles/yacc.dir/lex.yy.c.o"
-  "/cygdrive/c/Users/Ford/CLionProjects/hw3/lex-yacc-template/y.tab.c" "/cygdrive/c/Users/Ford/CLionProjects/hw3/lex-yacc-template/cmake-build-debug/CMakeFiles/yacc.dir/y.tab.c.o"
+  "/cygdrive/c/Users/Ford/CLionProjects/hw3/lex-yacc-template/yacc_syntax.tab.c" "/cygdrive/c/Users/Ford/CLionProjects/hw3/lex-yacc-template/cmake-build-debug/CMakeFiles/yacc.dir/yacc_syntax.tab.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

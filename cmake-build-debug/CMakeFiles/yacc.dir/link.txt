@@ -1,1 +1,1 @@
-/usr/bin/cc -g  -Wl,--enable-auto-import CMakeFiles/yacc.dir/lex.yy.c.o CMakeFiles/yacc.dir/y.tab.c.o  -o yacc.exe -Wl,--out-implib,libyacc.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+/usr/bin/cc -g  -Wl,--enable-auto-import CMakeFiles/yacc.dir/lex.yy.c.o CMakeFiles/yacc.dir/yacc_syntax.tab.c.o  -o yacc.exe -Wl,--out-implib,libyacc.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

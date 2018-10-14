@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/yacc.dir/lex.yy.c.o"
-  "CMakeFiles/yacc.dir/y.tab.c.o"
+  "CMakeFiles/yacc.dir/yacc_syntax.tab.c.o"
   "yacc.pdb"
   "yacc.exe"
   "libyacc.dll.a"

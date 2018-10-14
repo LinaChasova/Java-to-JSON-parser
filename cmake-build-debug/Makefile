@@ -150,32 +150,32 @@ lex.yy.c.s:
 	$(MAKE) -f CMakeFiles/yacc.dir/build.make CMakeFiles/yacc.dir/lex.yy.c.s
 .PHONY : lex.yy.c.s
 
-y.tab.o: y.tab.c.o
+yacc_syntax.tab.o: yacc_syntax.tab.c.o
 
-.PHONY : y.tab.o
+.PHONY : yacc_syntax.tab.o
 
 # target to build an object file
-y.tab.c.o:
-	$(MAKE) -f CMakeFiles/yacc.dir/build.make CMakeFiles/yacc.dir/y.tab.c.o
-.PHONY : y.tab.c.o
+yacc_syntax.tab.c.o:
+	$(MAKE) -f CMakeFiles/yacc.dir/build.make CMakeFiles/yacc.dir/yacc_syntax.tab.c.o
+.PHONY : yacc_syntax.tab.c.o
 
-y.tab.i: y.tab.c.i
+yacc_syntax.tab.i: yacc_syntax.tab.c.i
 
-.PHONY : y.tab.i
+.PHONY : yacc_syntax.tab.i
 
 # target to preprocess a source file
-y.tab.c.i:
-	$(MAKE) -f CMakeFiles/yacc.dir/build.make CMakeFiles/yacc.dir/y.tab.c.i
-.PHONY : y.tab.c.i
+yacc_syntax.tab.c.i:
+	$(MAKE) -f CMakeFiles/yacc.dir/build.make CMakeFiles/yacc.dir/yacc_syntax.tab.c.i
+.PHONY : yacc_syntax.tab.c.i
 
-y.tab.s: y.tab.c.s
+yacc_syntax.tab.s: yacc_syntax.tab.c.s
 
-.PHONY : y.tab.s
+.PHONY : yacc_syntax.tab.s
 
 # target to generate assembly for a file
-y.tab.c.s:
-	$(MAKE) -f CMakeFiles/yacc.dir/build.make CMakeFiles/yacc.dir/y.tab.c.s
-.PHONY : y.tab.c.s
+yacc_syntax.tab.c.s:
+	$(MAKE) -f CMakeFiles/yacc.dir/build.make CMakeFiles/yacc.dir/yacc_syntax.tab.c.s
+.PHONY : yacc_syntax.tab.c.s
 
 # Help Target
 help:
@@ -189,9 +189,9 @@ help:
 	@echo "... lex.yy.o"
 	@echo "... lex.yy.i"
 	@echo "... lex.yy.s"
-	@echo "... y.tab.o"
-	@echo "... y.tab.i"
-	@echo "... y.tab.s"
+	@echo "... yacc_syntax.tab.o"
+	@echo "... yacc_syntax.tab.i"
+	@echo "... yacc_syntax.tab.s"
 .PHONY : help
 
 

@@ -23,7 +23,7 @@ WS                  [ \f\n\r\t\v]
 
 %{
 #include <string.h>
-#include "y.tab.h"
+#include "yacc_syntax.tab.h"
 
 extern YYSTYPE yylval;
 int comment_ctr;
@@ -35,7 +35,6 @@ int comment_ctr;
 "import" {return IMPORT;}
 "while" {return WHILE;}
 "for" {return FOR;}
-"until" {return UNTIL;}
 "do" {return DO;}
 "continue" {return CONTINUE;}
 "break" {return BREAK;}
@@ -48,14 +47,26 @@ int comment_ctr;
 "true" {return TRUE;}
 "false" {return FALSE;}
 "this" {return THIS;}
-"super" {retunr SUPER;}
+"super" {return SUPER;}
 "private"  {return PRIVATE;}
 "public"  {return PUBLIC;}
 "protected"  {return PROTECTED;}
+"override" {return OVERRIDE;}
+"class" {return CLASS;}
+"catch"             { return  CATCH; }
+"extends"           { return  EXTENDS; }
+"finally"           { return  FINALLY; }
+"implements"        { return  IMPLEMENTS; }
+"interface"         { return  INTERFACE; }
+"null"              { return  NULL_; }
+"package"           { return  PACKAGE; }
+"throw"             { return  THROW; }
+"throws"            { return  THROWS; }
+"try"               { return  TRY; }
 
-{L}({L}|{D}|_|$)* {
-    yylval.text = (char *) malloc(strlen(yytext));
-    strcpy(yylval.text, yytext);
+({L}|_|$)({L}|{D}|_|$)* {
+    //yylval.string = (char *) malloc(strlen(yytext));
+    //strcpy(yylval.string, yytext);
     // TODO: TYPE_IDENTIFIER recognition, next goes testing solution
 
     return IDENTIFIER;
@@ -64,25 +75,27 @@ int comment_ctr;
 
 
 {BIN}|{OCT}|{DEC}|{HEX} {
-    yylval.text = (char *) malloc(strlen(yytext));
-    strcpy(yylval.text, yytext);
+    yylval.string = (char *) malloc(strlen(yytext));
+    strcpy(yylval.string, yytext);
     return INTEGER_LITERAL;
 }
 
 {DEC}({EXP}|\.{DEC}{EXP}?) {
-    yylval.text = (char *) malloc(strlen(yytext));
-    strcpy(yylval.text, yytext);
+    yylval.string = (char *) malloc(strlen(yytext));
+    strcpy(yylval.string, yytext);
     return REAL_LITERAL;
 }
 
 '(\\.|[^\\'])+' {
-    yylval.text = get_char_literal();
-    return CHAR_LITERAL;
+    yylval.string = (char *) malloc(strlen(yytext));
+    strcpy(yylval.string, yytext);
+    return REAL_LITERAL;
 }
 
 \"(\\.|[^\\"])*\" {
-    yylval.text = get_string_literal();
-    return STRING_LITERAL;
+    yylval.string = (char *) malloc(strlen(yytext));
+    strcpy(yylval.string, yytext);
+    return REAL_LITERAL;
 }
 
 ";"            { return SEPARATOR; }
@@ -96,6 +109,7 @@ int comment_ctr;
 "=>"                { return EQUALS_GREATER; }
 ">="                { return GREATER_EQUALS; }
 "&"                 { return AMPERSAND; }
+"&&"                 { return AMPERSAND; }
 "("                 { return LPAREN; }
 ")"                 { return RPAREN; }
 "*"                 { return ASTERISK; }
@@ -111,30 +125,20 @@ int comment_ctr;
 "="                 { return EQUALS; }
 ">"                 { return GREATER; }
 "["                 { return LBRACKET; }
-"%"                { return BACKSLASH; }
+"%"                 { return BACKSLASH; }
 "]"                 { return RBRACKET; }
 "|"                 { return VERTICAL; }
+"||"                { return VERTICAL; }
+"~"                 { return  TILDA; }
+
+
 
 {WS}                { /* skip over blanks */ }
-
-
-
-
 
 <COMMENT>"/*"       { ++comment_ctr; }
 <COMMENT>"*/"       { --comment_ctr; if (comment_ctr < 1) BEGIN INITIAL; }
 <COMMENT>(.|\n)     { /* ignore comment content */ }
 
-
-{digit}+            { yylval.number = atoi(yytext); return TOKNUMBER; }
-({upper}|{low})+    { yylval.string = strdup(yytext); return TOKWORD; }
-,                   return TOKCOMMA;
-
-
-
-
-
-{ws}                { /* skip over blanks */ }
 .                   { /* skip all other symbols, they're printed by default */ }
 
 %%
@@ -145,3 +149,6 @@ int yywrap()
 {
     return 1;
 }
+//{digit}+            { yylval.number = atoi(yytext); return TOKNUMBER; }
+//({upper}|{low})+    { yylval.string = strdup(yytext); return TOKWORD; }
+//,                   return TOKCOMMA;

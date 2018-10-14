@@ -8,11 +8,7 @@ extern int yylex();
 char const *yyerror(const char *str);
 %}
 
-// For expected number of conflicts
-%expect    0  // shift/reduce
-%expect-rr 0  // reduce/reduce
-
-%start unit
+%start CompilationUnit
 
 %union
 {
@@ -69,12 +65,38 @@ char const *yyerror(const char *str);
 %token THIS
 %token SUPER
 %token STATIC
+%token OVERRIDE
+%token DO
+%token FOR
+%token LCURL
+%token RCURL
+%token NOT
+%token PRIVATE
+%token PROTECTED
+%token PUBLIC
+%token VOID
+%token CONTINUE
+%token MORE_MORE
+%token CLASS
+
+
+%token CATCH
+%token EXTENDS
+%token FINALLY
+%token IMPLEMENTS
+%token INTERFACE
+%token NULL_
+%token PACKAGE
+%token THROW
+%token THROWS
+%token TILDA
+%token TRY
 
 
 
-// TODO: %type declarations
+%nonassoc NELSE
+%nonassoc ELSE
 
-// Lower priority
 %left AND_THEN                                            // Logical AND
 %left OR        VERTICAL                                  // Bitwise OR
 %left XOR       CARET                                     // Bitwise Exclusive OR
@@ -86,70 +108,366 @@ char const *yyerror(const char *str);
 %left ASTERISK  SLASH           BACKSLASH                 // Multiplicative operations
 %nonassoc LOWER_THAN_LPAREN  // Pseudo-token for prioritizing the routine call in PostfixExpression
 %right LPAREN
-// Higher priority
-%%
-
-unit
-        : /* empty */
-        | TOKBEGIN tokens
-        ;
-
-tokens
-        :                 token { printf("\tTOKWORD found: %s\n", $1); }
-        | tokens TOKCOMMA token { printf("\tTOKWORD found: %s\n", $3); }
-        ;
-
-token
-        : TOKNUMBER
-        {
-            $$ = (char *) malloc(11 * sizeof(char));
-            itoa($1, $$, 10);
-        }
-        | TOKWORD   { $$ = $1; }
-        ;
+//%%
 
 %%
 
 
-IdentifierSeq
-        :                         IDENTIFIER
-        | IdentifierSeq COMMA     IDENTIFIER
-        ;
+CompilationUnit
+    : PackageDeclaration ImportDeclarations TypeDeclarations
+    ;
+
+PackageDeclaration
+    :
+    | PACKAGE PackageName SEPARATOR
+    ;
+
+ImportDeclarations
+    :
+    | ImportDeclaration
+    | ImportDeclarations ImportDeclaration
+    ;
+
+ImportDeclaration
+    : IMPORT TypeName SEPARATOR
+    | IMPORT PackageName DOT ASTERISK SEPARATOR
+
+TypeDeclarations
+    :
+    | TypeDeclaration
+    | TypeDeclarations TypeDeclaration
+    ;
+
+TypeDeclaration
+    : ClassDeclaration
+    | InterfaceDeclaration
+    | SEPARATOR
+    ;
+
+ClassDeclaration
+    : ClassModifiers CLASS IDENTIFIER Super Interfaces ClassBody
+    ;
+
+ClassModifiers
+    :
+    | ClassModifier
+    | ClassModifiers ClassModifier
+    ;
 
 
-Literal
-        : BooleanLiteral
-        | INTEGER_LITERAL
-        | REAL_LITERAL
-        | CHAR_LITERAL
-        | STRING_LITERAL
-        ;
-
-BooleanLiteral
-        : TRUE
-        | FALSE
-        ;
+ClassModifier
+    : PUBLIC | PRIVATE
+    | ABSTRACT
+    | FINAL
+    ;
 
 
+Super
+    :
+    | EXTENDS ClassType
+    ;
+
+Interfaces
+    :
+    | IMPLEMENTS InterfaceTypeList
+    ;
+
+InterfaceTypeList
+    : InterfaceType
+    | InterfaceTypeList COMMA InterfaceType
+    ;
+
+ClassBody
+    : LCURL ClassBodyDeclarations RCURL
+
+ClassBodyDeclarations
+    :
+    | ClassBodyDeclaration
+    | ClassBodyDeclarations ClassBodyDeclaration
+    ;
+
+ClassBodyDeclaration
+    : ClassMemberDeclaration
+    | StaticInitializer
+    | ConstructorDeclaration
+    ;
+
+ClassMemberDeclaration
+    : FieldDeclaration
+    | MethodDeclaration
+    ;
+
+StaticInitializer
+    : STATIC Block
+    ;
+
+ConstructorDeclaration
+    : ConstructorModifiers ConstructorDeclarator Throws ConstructorBody
+    ;
+
+ConstructorModifiers
+    :
+    | ConstructorModifier
+    | ConstructorModifiers ConstructorModifier
+
+ConstructorModifier
+    : PUBLIC | PROTECTED | PRIVATE
+    ;
+
+ConstructorDeclarator
+    : IDENTIFIER LPAREN FormalParameterList RPAREN
+
+FormalParameterList
+    :
+    | FormalParameter
+    | FormalParameterList FormalParameter
+    ;
+
+FormalParameter
+    : Type VariableDeclaratorId
+    ;
+
+Throws
+    :
+    | THROWS ClassTypeList
+    ;
+
+ClassTypeList
+    : ClassType
+    | ClassTypeList COMMA ClassType
+    ;
+
+ConstructorBody
+    : LCURL ExplicitConstructorInvocation BlockStatements RCURL
+    ;
+
+ExplicitConstructorInvocation
+    :
+    | THIS LPAREN ArgumentList RPAREN
+    | SUPER LPAREN ArgumentList RPAREN
+    ;
+
+FieldDeclaration
+    : FieldModifiers Type VariableDeclarators SEPARATOR
+    ;
+
+FieldModifiers
+    :
+    | FieldModifier
+    | FieldModifiers FieldModifier
+
+FieldModifier
+    : PUBLIC | PROTECTED | PRIVATE | STATIC | FINAL
+    ;
+
+VariableDeclarators
+    : VariableDeclarator
+    | VariableDeclarators COMMA VariableDeclarator
+    ;
+
+VariableDeclarator
+    : VariableDeclaratorId
+    | VariableDeclaratorId EQUALS VariableInitializer
+    ;
+
+VariableDeclaratorId
+    : IDENTIFIER
+    | VariableDeclaratorId LBRACKET RBRACKET
+
+VariableInitializer
+    : Expression
+    | ArrayInitializer
+    ;
+
+MethodDeclaration
+    : MethodHeader MethodBody
+    ;
+
+MethodHeader
+    : MethodModifiers ResultType MethodDeclarator Throws
+    ;
+
+ResultType
+    : Type
+    | VOID
+    ;
+
+MethodModifiers
+    :
+    | MethodModifier
+    | MethodModifiers MethodModifier
+    ;
+
+MethodModifier
+    : PUBLIC | PROTECTED | PRIVATE | STATIC | ABSTRACT | FINAL
+    ;
+
+MethodDeclarator
+    : IDENTIFIER LPAREN FormalParameterList RPAREN
+    ;
+
+MethodBody
+    : Block
+    | SEPARATOR
+    ;
+
+InterfaceDeclaration
+    : InterfaceModifiers INTERFACE IDENTIFIER ExtendsInterfaces InterfaceBody
+    ;
+
+InterfaceModifiers
+    :
+    | InterfaceModifier
+    | InterfaceModifiers InterfaceModifier
+    ;
+
+InterfaceModifier
+    : PUBLIC
+    | ABSTRACT
+    ;
+
+ExtendsInterfaces
+    : EXTENDS InterfaceType
+    | ExtendsInterfaces COMMA InterfaceType
+    ;
+
+InterfaceBody
+    : LCURL InterfaceMemberDeclarations RCURL
+    ;
+
+InterfaceMemberDeclarations
+    :
+    | InterfaceMemberDeclaration
+    | InterfaceMemberDeclarations InterfaceMemberDeclaration
+    ;
+
+InterfaceMemberDeclaration
+    : ConstantDeclaration
+    | AbstractMethodDeclaration
+    ;
+
+ConstantDeclaration
+    : ConstantModifiers Type VariableDeclarator
+    ;
+
+ConstantModifiers
+    : PUBLIC | STATIC | FINAL
+    ;
+
+AbstractMethodDeclaration
+    : AbstractMethodModifiers ResultType MethodDeclarator Throws SEPARATOR
+    ;
+
+AbstractMethodModifiers
+    :
+    | AbstractMethodModifier
+    | AbstractMethodModifiers AbstractMethodModifier
+    ;
+
+AbstractMethodModifier
+    : PUBLIC | ABSTRACT
+    ;
+
+ArrayInitializer
+    : LCURL VariableInitializers RCURL
+    ;
+
+VariableInitializers
+    :
+    | VariableInitializer
+    | VariableInitializers COMMA VariableInitializer
+    ;
+
+VariableInitializer
+    : Expression
+    | ArrayInitializer
+    ;
+
+/// Types ///////////////////////////////////////////////////////////////////
+
+Type
+    : IDENTIFIER
+    | ArrayType
+    ;
+
+ArrayType
+    : Type LBRACKET RBRACKET
+    ;
+
+TypeName
+    : IDENTIFIER
+    | PackageName DOT IDENTIFIER
+    ;
+
+ClassType
+    : TypeName
+    ;
+
+
+InterfaceType
+    : TypeName
+    ;
+
+PackageName
+    : IDENTIFIER
+    | PackageName DOT IDENTIFIER
+    ;
 
 
 
-Statement
-        : IfElseStatement
-        | ForStatement
-        | WhileStatement
-        | DoWhileStatement
-        | ImportStatement
-        | ReturnStatement
-        ;
+// Blocks and Commands ///////////////////////////////////////////
+
+Block
+    : LPAREN BlockStatements RPAREN
+    ;
+
+BlockOrStatement
+    : Block
+    | Statement
+    ;
+
+BlockStatements
+    :
+    | BlockStatement
+    | BlockStatements BlockStatement
+    ;
+
+BlockStatement
+    : LocalVariableDeclaration SEPARATOR
+    | Statement
+    ;
+
+LocalVariableDeclaration
+    : Type VariableDeclarators
+    ;
+
+EmptyStatement
+    : SEPARATOR
+    ;
+
+
+
+ExpressionStatement
+    : StatementExpression SEPARATOR
+    ;
+
+StatementExpression
+    : Assignment
+    | Expression
+    | MethodInvocation
+    | ClassInstanceCreationExpression
+    ;
 
 IfElseStatement
-    : IF LPAREN Expression RPAREN Statement
-    | IF LPAREN Expression RPAREN LCURL Statements RCURL
+    : IF LPAREN Expression RPAREN Statement %prec NELSE
     | IF LPAREN Expression RPAREN  Statement ELSE Statement
-    | IF LPAREN Expression RPAREN  Statement ELSE LCURL Statements RCURL
-    | IF LPAREN Expression RPAREN  LCURL Statements RCURL ELSE Statement
-    | IF LPAREN Expression RPAREN  LCURL Statements RCURL ELSE LCURL Statements RCURL
+
+WhileStatement
+    : WHILE LPAREN Expression RPAREN Statement
+    ;
+
+DoWhileStatement
+    : DO Statement WHILE LPAREN Expression RPAREN
     ;
 
 ForCondition
@@ -165,40 +483,82 @@ ForCondition
 
 ForStatement
     : FOR LPAREN ForCondition RPAREN Statement
-    | FOR LPAREN ForCondition RPAREN LCURL Statements RCURL
     ;
 
-WhileStatement
-    : WHILE LPAREN Expression RPAREN Statement
-    | WHILE LPAREN Expression RPAREN LCURL Statements RCURL
+Statement
+    : StatementWithoutTrailingSubstatement
+    | IfElseStatement
+    | WhileStatement
+    | ForStatement
+    | DoWhileStatement
     ;
 
-DoWhileStatement
-    : DO Statement WHILE LPAREN Expression RPAREN
-    | DO LCURL Statements RCURL WHILE LPAREN Expression RPAREN
+StatementWithoutTrailingSubstatement
+    : Block
+    | EmptyStatement
+    | ExpressionStatement
+    | BreakStatement
+    | ContinueStatement
+    | ReturnStatement
+    | ThrowsStatements
+    | TryStatement
     ;
 
+BreakStatement
+    : BREAK IDENTIFIER SEPARATOR
+    | BREAK SEPARATOR
+    ;
 
-ImportStatement
-    : IMPORT                IdentifierSeq  SEPARATOR
-    | IMPORT STATIC         IdentifierSeq  SEPARATOR
-    | IMPORT        IdentifierSeq DOT ASTERISK SEPARATOR
-    | IMPORT STATIC IdentifierSeq DOT ASTERISK SEPARATOR
+ContinueStatement
+    : CONTINUE IDENTIFIER SEPARATOR
+    | CONTINUE SEPARATOR
     ;
 
 ReturnStatement
-    : RETURN SEPARATOR
-    | RETURN Expression
-    ;  // SEPARATOR because of shift/reduce with next statements and declarations
+    : RETURN IDENTIFIER SEPARATOR
+    | RETURN SEPARATOR
+    ;
+
+ThrowsStatements
+    : THROW Expression SEPARATOR
+    ;
+
+TryStatement
+    : TRY Block Catches
+    | TRY Block Catches Finally
+    | TRY Block         Finally
+    ;
+
+Catches
+    : CatchClause
+    | Catches CatchClause
+    ;
+
+CatchClause
+    : CATCH LPAREN FormalParameter RPAREN Block
+    ;
+
+Finally
+    : FINALLY Block
 
 
-// Expression //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-ExpressionSeq
-        :                         Expression
-        | ExpressionSeq COMMA     Expression
-        | ExpressionSeq SEPARATOR Expression
-        ;
+// Expressions ///////////////////////////////////////////////
+
+ClassInstanceCreationExpression
+    : NEW ClassType LPAREN ArgumentList RPAREN
+    ;
+
+Assignment
+    : LeftHandSide AssignmentOperator Expression
+    ;
+
+ArgumentList
+    :
+    | Expression
+    | ArgumentList COMMA Expression
+    ;
+
 
 Expression
         : UnaryExpression
@@ -213,7 +573,7 @@ Expression
         | Expression LESS_EQUALS     Expression
         | Expression GREATER         Expression
         | Expression GREATER_EQUALS  Expression
-        | Expression EQUALS          Expression
+        | Assignment
         | Expression SLASH_EQUALS    Expression
         | Expression AND             Expression
         | Expression AMPERSAND       Expression
@@ -225,7 +585,6 @@ Expression
 UnaryExpression
         : PostfixExpression %prec LPAREN
         | NOT         UnaryExpression
-        | TILDE       UnaryExpression
         | PLUS        UnaryExpression
         | MINUS       UnaryExpression
         | PLUS_PLUS   UnaryExpression
@@ -236,35 +595,107 @@ PostfixExpression
         : PrimaryExpression
         | PostfixExpression DOT PrimaryExpression
         | PostfixExpression LPAREN               RPAREN %prec LPAREN
-        | PostfixExpression LPAREN ExpressionSeq RPAREN %prec LPAREN
+        | PostfixExpression LPAREN BlockOrStatement RPAREN %prec LPAREN
         | PostfixExpression PLUS_PLUS
         | PostfixExpression MINUS_MINUS
         ;
 
 PrimaryExpression
-        : LPAREN ExpressionSeq RPAREN  // Tuple or parenthesized expression
+        : LPAREN BlockOrStatement RPAREN  // Tuple or parenthesized expression
         | Literal
         | NEW IDENTIFIER
         | THIS
         | SUPER
         ;
 
-/// Function declaration ///////////////////////////////////////////////////////////////////////////////////////////
-
-Function
-    :
-
-
-ReturnType
-    : VOID
-    | IDENTIFIER
+LeftHandSide
+    : ExpressionName
+    | FieldAccess
+    | ArrayAccess
     ;
 
+AssignmentOperator
+    : EQUALS
+    | ASTERISK EQUALS
+    | BACKSLASH EQUALS
+    | SLASH_EQUALS
+    | PLUS EQUALS
+    | MINUS EQUALS
+    | LESS_LESS EQUALS
+    | MORE_MORE EQUALS
+    | AMPERSAND EQUALS
+    | VERTICAL EQUALS
+    ;
+
+CastExpression
+    : LPAREN Type RPAREN UnaryExpression
+    | LPAREN IDENTIFIER RPAREN UnaryExpressionNotPlusMinus
+    ;
+
+UnaryExpressionNotPlusMinus
+    : PostfixExpression
+    | TILDA UnaryExpression
+    | UnaryExpression
+    | CastExpression
+    ;
+
+MethodInvocation
+    : MethodName LPAREN ArgumentList RPAREN
+    | Primary DOT IDENTIFIER LPAREN ArgumentList RPAREN
+    | SUPER DOT IDENTIFIER LPAREN ArgumentList RPAREN
+    ;
+
+FieldAccess
+    : Primary DOT IDENTIFIER
+    | SUPER DOT IDENTIFIER
+    ;
+
+Primary
+    : Literal
+    | THIS
+    | LPAREN Expression RPAREN
+    | ClassInstanceCreationExpression
+    | FieldAccess
+    | MethodInvocation
+    | ArrayAccess
+    | NEW Type DimExprs Dims
+    ;
+
+DimExprs
+    : DimExpr
+    | DimExprs DimExprs
+    ;
+
+DimExpr
+    : LBRACKET Expression RBRACKET
+
+Dims
+    :
+    | LBRACKET RBRACKET
+    | Dims LBRACKET RBRACKET
+    ;
+
+ArrayAccess
+    : ExpressionName LBRACKET Expression RBRACKET
+    | Primary LBRACKET Expression RBRACKET
+    ;
+
+///Tokens//////////////////////////////////////////////////
 
 
+ExpressionName
+    : IDENTIFIER | AmbiguousName DOT IDENTIFIER
+    ;
 
+MethodName
+    : ExpressionName
+    ;
 
-// Primitives //////////////////////////////////////////////////////////////////////////////////////////////////////////
+AmbiguousName
+    : IDENTIFIER
+    | AmbiguousName DOT IDENTIFIER
+    ;
+
 
 Literal
         : BooleanLiteral
@@ -272,6 +703,7 @@ Literal
         | REAL_LITERAL
         | CHAR_LITERAL
         | STRING_LITERAL
+        | NULL_
         ;
 
 BooleanLiteral
@@ -279,44 +711,10 @@ BooleanLiteral
         | FALSE
         ;
 
-CompoundName
-        :                  IDENTIFIER
-        | CompoundName DOT IDENTIFIER
-        ;
-
-IdentifierSeq
-        :                         IDENTIFIER
-        | IdentifierSeq COMMA     IDENTIFIER
-        ;
-
-Label
-        : IDENTIFIER
-        ;
-
-OverridableOperator
-        | NOT
-        | XOR
-        | AND
-        | OR
-        | PLUS_PLUS
-        | MINUS_MINUS
-        | SLASH_EQUALS
-        | LESS_LESS
-        | LESS_EQUALS
-        | GREATER_EQUALS
-        | GREATER_GREATER
-        | AMPERSAND
-        | ASTERISK
-        | PLUS
-        | MINUS
-        | SLASH
-        | LESS
-        | EQUALS
-        | GREATER
-        | VERTICAL
-        ;  // If any operator becomes overridable - add it here  // TODO: check the list
+/// Batya v zdanii //////////////////////////////////////////////////////////////
 
 
+%%
 
 // Called when parse error was detected.
 char const *yyerror(const char *str)
@@ -324,9 +722,12 @@ char const *yyerror(const char *str)
     fprintf(stderr, "yyerror: %s\n", str);
 }
 
+extern FILE *yyin;
+
 // Program entry point.
 int main()
 {
     yydebug = 1;  // TODO: REMOVE IN PROD, set 0 for no debug info.
+    yyin = fopen("in.txt", "r");
     return yyparse();
 }

@@ -3,4 +3,4 @@ project(lex-yacc-template C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(yacc lex.yy.c y.tab.c)
+add_executable(yacc lex.yy.c yacc_syntax.tab.c)

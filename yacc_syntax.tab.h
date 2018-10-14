@@ -30,8 +30,8 @@
    This special exception was added by the Free Software Foundation in
    version 2.2 of Bison.  */
 
-#ifndef YY_YY_Y_TAB_H_INCLUDED
-# define YY_YY_Y_TAB_H_INCLUDED
+#ifndef YY_YY_YACC_SYNTAX_TAB_H_INCLUDED
+# define YY_YY_YACC_SYNTAX_TAB_H_INCLUDED
 /* Enabling traces.  */
 #ifndef YYDEBUG
 # define YYDEBUG 1
@@ -46,32 +46,98 @@ extern int yydebug;
    /* Put the tokens into the symbol table, so that GDB and other debuggers
       know about them.  */
    enum yytokentype {
-     TOKNUMBER = 258,
-     TOKWORD = 259,
-     TOKBEGIN = 260,
-     TOKCOMMA = 261
+     IMPORT = 258,
+     IF = 259,
+     ELSE = 260,
+     WHILE = 261,
+     BREAK = 262,
+     RETURN = 263,
+     ABSTRACT = 264,
+     FINAL = 265,
+     NEW = 266,
+     TRUE = 267,
+     FALSE = 268,
+     IDENTIFIER = 269,
+     INTEGER_LITERAL = 270,
+     REAL_LITERAL = 271,
+     CHAR_LITERAL = 272,
+     STRING_LITERAL = 273,
+     SEPARATOR = 274,
+     PLUS_PLUS = 275,
+     MINUS_MINUS = 276,
+     SLASH_EQUALS = 277,
+     LESS_LESS = 278,
+     LESS_EQUALS = 279,
+     EQUALS_GREATER = 280,
+     GREATER_EQUALS = 281,
+     GREATER_GREATER = 282,
+     AMPERSAND = 283,
+     ASTERISK = 284,
+     PLUS = 285,
+     LPAREN = 286,
+     RPAREN = 287,
+     COMMA = 288,
+     MINUS = 289,
+     DOT = 290,
+     SLASH = 291,
+     COLON = 292,
+     LESS = 293,
+     EQUALS = 294,
+     GREATER = 295,
+     LBRACKET = 296,
+     BACKSLASH = 297,
+     RBRACKET = 298,
+     VERTICAL = 299,
+     THIS = 300,
+     SUPER = 301,
+     STATIC = 302,
+     OVERRIDE = 303,
+     DO = 304,
+     FOR = 305,
+     LCURL = 306,
+     RCURL = 307,
+     NOT = 308,
+     PRIVATE = 309,
+     PROTECTED = 310,
+     PUBLIC = 311,
+     VOID = 312,
+     CONTINUE = 313,
+     MORE_MORE = 314,
+     CLASS = 315,
+     CATCH = 316,
+     EXTENDS = 317,
+     FINALLY = 318,
+     IMPLEMENTS = 319,
+     INTERFACE = 320,
+     NULL_ = 321,
+     PACKAGE = 322,
+     THROW = 323,
+     THROWS = 324,
+     TILDA = 325,
+     TRY = 326,
+     NELSE = 327,
+     AND_THEN = 328,
+     OR = 329,
+     CARET = 330,
+     XOR = 331,
+     AND = 332,
+     LOWER_THAN_LPAREN = 333
    };
 #endif
-/* Tokens.  */
-#define TOKNUMBER 258
-#define TOKWORD 259
-#define TOKBEGIN 260
-#define TOKCOMMA 261
-
 
 
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 typedef union YYSTYPE
 {
 /* Line 2058 of yacc.c  */
-#line 18 "yacc_syntax.y"
+#line 14 "yacc_syntax.y"
 
     int number;
     char *string;
 
 
 /* Line 2058 of yacc.c  */
-#line 75 "y.tab.h"
+#line 141 "yacc_syntax.tab.h"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
@@ -94,4 +160,4 @@ int yyparse ();
 #endif
 #endif /* ! YYPARSE_PARAM */
 
-#endif /* !YY_YY_Y_TAB_H_INCLUDED  */
+#endif /* !YY_YY_YACC_SYNTAX_TAB_H_INCLUDED  */

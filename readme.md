@@ -25,3 +25,11 @@ g) variables, assignments
 - Input (in.txt) should contain example with most common structures
 - Output (out.txt) should contain json representation (it is like Intermediate Representation) of your input (as in the previous HA - we are waiting for the best format from you, specification here is not mandatory)
 - Requirements for tests, readme, good structure - the same.
+
+
+
+Only commonly used funciton modificators used: such as {abstract, static, etc}, no {synchronized, etc exotic}
+No labeled statements
+No switch case constructions
+Not Full work with array supported
+

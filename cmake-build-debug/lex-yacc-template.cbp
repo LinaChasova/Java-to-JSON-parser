@@ -77,7 +77,7 @@
 		<Unit filename="/cygdrive/c/Users/Ford/CLionProjects/hw3/lex-yacc-template/lex.yy.c">
 			<Option target="yacc"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/Ford/CLionProjects/hw3/lex-yacc-template/y.tab.c">
+		<Unit filename="/cygdrive/c/Users/Ford/CLionProjects/hw3/lex-yacc-template/yacc_syntax.tab.c">
 			<Option target="yacc"/>
 		</Unit>
 		<Unit filename="/cygdrive/c/Users/Ford/CLionProjects/hw3/lex-yacc-template/CMakeLists.txt">

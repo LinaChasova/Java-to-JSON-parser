@@ -4,7 +4,7 @@
   <component name="CidrRootsConfiguration">
     <excludeRoots>
       <file path="$PROJECT_DIR$/Bison" />
-      <file path="$PROJECT_DIR$/Lex" />
+      <file path="$PROJECT_DIR$/Flex" />
     </excludeRoots>
   </component>
   <component name="JavaScriptSettings">

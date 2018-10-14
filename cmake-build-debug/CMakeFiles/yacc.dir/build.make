@@ -70,29 +70,29 @@ CMakeFiles/yacc.dir/lex.yy.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/yacc.dir/lex.yy.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /cygdrive/c/Users/Ford/CLionProjects/hw3/lex-yacc-template/lex.yy.c -o CMakeFiles/yacc.dir/lex.yy.c.s
 
-CMakeFiles/yacc.dir/y.tab.c.o: CMakeFiles/yacc.dir/flags.make
-CMakeFiles/yacc.dir/y.tab.c.o: ../y.tab.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/Ford/CLionProjects/hw3/lex-yacc-template/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/yacc.dir/y.tab.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/yacc.dir/y.tab.c.o   -c /cygdrive/c/Users/Ford/CLionProjects/hw3/lex-yacc-template/y.tab.c
+CMakeFiles/yacc.dir/yacc_syntax.tab.c.o: CMakeFiles/yacc.dir/flags.make
+CMakeFiles/yacc.dir/yacc_syntax.tab.c.o: ../yacc_syntax.tab.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/Ford/CLionProjects/hw3/lex-yacc-template/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/yacc.dir/yacc_syntax.tab.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/yacc.dir/yacc_syntax.tab.c.o   -c /cygdrive/c/Users/Ford/CLionProjects/hw3/lex-yacc-template/yacc_syntax.tab.c
 
-CMakeFiles/yacc.dir/y.tab.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/yacc.dir/y.tab.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /cygdrive/c/Users/Ford/CLionProjects/hw3/lex-yacc-template/y.tab.c > CMakeFiles/yacc.dir/y.tab.c.i
+CMakeFiles/yacc.dir/yacc_syntax.tab.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/yacc.dir/yacc_syntax.tab.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /cygdrive/c/Users/Ford/CLionProjects/hw3/lex-yacc-template/yacc_syntax.tab.c > CMakeFiles/yacc.dir/yacc_syntax.tab.c.i
 
-CMakeFiles/yacc.dir/y.tab.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/yacc.dir/y.tab.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /cygdrive/c/Users/Ford/CLionProjects/hw3/lex-yacc-template/y.tab.c -o CMakeFiles/yacc.dir/y.tab.c.s
+CMakeFiles/yacc.dir/yacc_syntax.tab.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/yacc.dir/yacc_syntax.tab.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /cygdrive/c/Users/Ford/CLionProjects/hw3/lex-yacc-template/yacc_syntax.tab.c -o CMakeFiles/yacc.dir/yacc_syntax.tab.c.s
 
 # Object files for target yacc
 yacc_OBJECTS = \
 "CMakeFiles/yacc.dir/lex.yy.c.o" \
-"CMakeFiles/yacc.dir/y.tab.c.o"
+"CMakeFiles/yacc.dir/yacc_syntax.tab.c.o"
 
 # External object files for target yacc
 yacc_EXTERNAL_OBJECTS =
 
 yacc.exe: CMakeFiles/yacc.dir/lex.yy.c.o
-yacc.exe: CMakeFiles/yacc.dir/y.tab.c.o
+yacc.exe: CMakeFiles/yacc.dir/yacc_syntax.tab.c.o
 yacc.exe: CMakeFiles/yacc.dir/build.make
 yacc.exe: CMakeFiles/yacc.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/cygdrive/c/Users/Ford/CLionProjects/hw3/lex-yacc-template/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable yacc.exe"
