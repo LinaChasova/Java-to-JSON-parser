@@ -11,64 +11,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af251975-4881-49ab-856f-6f2727570dbe" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LEX_YACC_GCC.BAT" beforeDir="false" afterPath="$PROJECT_DIR$/LEX_YACC_GCC.BAT" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lex/bin/commandprompt.bat" beforeDir="false" afterPath="$PROJECT_DIR$/Flex/bin/commandprompt.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lex/bin/flex++.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Flex/bin/flex++.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lex/bin/flex.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Flex/bin/flex.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lex/bin/lex++.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Flex/bin/lex++.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lex/bin/lex.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Flex/bin/lex.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lex/contrib/flex/2.5.4a/flex-2.5.4a/COPYING" beforeDir="false" afterPath="$PROJECT_DIR$/Flex/contrib/flex/2.5.4a/flex-2.5.4a/COPYING" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lex/contrib/flex/2.5.4a/flex-2.5.4a/INSTALL" beforeDir="false" afterPath="$PROJECT_DIR$/Flex/contrib/flex/2.5.4a/flex-2.5.4a/INSTALL" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lex/contrib/flex/2.5.4a/flex-2.5.4a/MISC/Borland/NOTES" beforeDir="false" afterPath="$PROJECT_DIR$/Flex/contrib/flex/2.5.4a/flex-2.5.4a/MISC/Borland/NOTES" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lex/contrib/flex/2.5.4a/flex-2.5.4a/MISC/MVS/README" beforeDir="false" afterPath="$PROJECT_DIR$/Flex/contrib/flex/2.5.4a/flex-2.5.4a/MISC/MVS/README" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lex/contrib/flex/2.5.4a/flex-2.5.4a/MISC/README" beforeDir="false" afterPath="$PROJECT_DIR$/Flex/contrib/flex/2.5.4a/flex-2.5.4a/MISC/README" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lex/contrib/flex/2.5.4a/flex-2.5.4a/MISC/fastwc/README" beforeDir="false" afterPath="$PROJECT_DIR$/Flex/contrib/flex/2.5.4a/flex-2.5.4a/MISC/fastwc/README" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lex/contrib/flex/2.5.4a/flex-2.5.4a/NEWS" beforeDir="false" afterPath="$PROJECT_DIR$/Flex/contrib/flex/2.5.4a/flex-2.5.4a/NEWS" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lex/contrib/flex/2.5.4a/flex-2.5.4a/README" beforeDir="false" afterPath="$PROJECT_DIR$/Flex/contrib/flex/2.5.4a/flex-2.5.4a/README" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lex/contrib/flex/2.5.4a/flex-2.5.4a/depends-GnuWin32.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Flex/contrib/flex/2.5.4a/flex-2.5.4a/depends-GnuWin32.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lex/contrib/flex/2.5.4a/flex-2.5.4a/flex-2.5.4a-1-GnuWin32.README" beforeDir="false" afterPath="$PROJECT_DIR$/Flex/contrib/flex/2.5.4a/flex-2.5.4a/flex-2.5.4a-1-GnuWin32.README" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lex/doc/flex/2.5.4a/flex-2.5.4a/FLEX.HLP" beforeDir="false" afterPath="$PROJECT_DIR$/Flex/doc/flex/2.5.4a/flex-2.5.4a/FLEX.HLP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lex/doc/flex/2.5.4a/flex-2.5.4a/flex.chm" beforeDir="false" afterPath="$PROJECT_DIR$/Flex/doc/flex/2.5.4a/flex-2.5.4a/flex.chm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lex/doc/flex/2.5.4a/flex-2.5.4a/flex.dvi" beforeDir="false" afterPath="$PROJECT_DIR$/Flex/doc/flex/2.5.4a/flex-2.5.4a/flex.dvi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lex/doc/flex/2.5.4a/flex-2.5.4a/flex.html" beforeDir="false" afterPath="$PROJECT_DIR$/Flex/doc/flex/2.5.4a/flex-2.5.4a/flex.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lex/doc/flex/2.5.4a/flex-2.5.4a/flex.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/Flex/doc/flex/2.5.4a/flex-2.5.4a/flex.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lex/doc/flex/2.5.4a/flex-2.5.4a/flex.ps" beforeDir="false" afterPath="$PROJECT_DIR$/Flex/doc/flex/2.5.4a/flex-2.5.4a/flex.ps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lex/doc/flex/2.5.4a/flex-2.5.4a/lex_V7.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/Flex/doc/flex/2.5.4a/flex-2.5.4a/lex_V7.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lex/doc/flex/2.5.4a/flex-2.5.4a/lex_V7.ps" beforeDir="false" afterPath="$PROJECT_DIR$/Flex/doc/flex/2.5.4a/flex-2.5.4a/lex_V7.ps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lex/include/FlexLexer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Flex/include/FlexLexer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lex/include/unistd.h" beforeDir="false" afterPath="$PROJECT_DIR$/Flex/include/unistd.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lex/info/flex.info" beforeDir="false" afterPath="$PROJECT_DIR$/Flex/info/flex.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lex/lib/libfl.a" beforeDir="false" afterPath="$PROJECT_DIR$/Flex/lib/libfl.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lex/man/cat1/flex.1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Flex/man/cat1/flex.1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lex/man/html/flex.1.html" beforeDir="false" afterPath="$PROJECT_DIR$/Flex/man/html/flex.1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lex/man/man1/flex.1" beforeDir="false" afterPath="$PROJECT_DIR$/Flex/man/man1/flex.1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lex/man/pdf/flex-man.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/Flex/man/pdf/flex-man.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lex/man/ps/flex-man.ps" beforeDir="false" afterPath="$PROJECT_DIR$/Flex/man/ps/flex-man.ps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lex/manifest/flex-2.5.4a-1-bin.mft" beforeDir="false" afterPath="$PROJECT_DIR$/Flex/manifest/flex-2.5.4a-1-bin.mft" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lex/manifest/flex-2.5.4a-1-bin.ver" beforeDir="false" afterPath="$PROJECT_DIR$/Flex/manifest/flex-2.5.4a-1-bin.ver" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lex/manifest/flex-2.5.4a-1-doc.mft" beforeDir="false" afterPath="$PROJECT_DIR$/Flex/manifest/flex-2.5.4a-1-doc.mft" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lex/manifest/flex-2.5.4a-1-doc.ver" beforeDir="false" afterPath="$PROJECT_DIR$/Flex/manifest/flex-2.5.4a-1-doc.ver" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lex/manifest/flex-2.5.4a-1-lib.mft" beforeDir="false" afterPath="$PROJECT_DIR$/Flex/manifest/flex-2.5.4a-1-lib.mft" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lex/manifest/flex-2.5.4a-1-lib.ver" beforeDir="false" afterPath="$PROJECT_DIR$/Flex/manifest/flex-2.5.4a-1-lib.ver" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/yacc.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/yacc.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/yacc.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/yacc.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/yacc.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/yacc.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/yacc.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/yacc.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/yacc.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/yacc.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lex-yacc-template.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lex-yacc-template.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lex.yy.c" beforeDir="false" afterPath="$PROJECT_DIR$/lex.yy.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lex_tokens.l" beforeDir="false" afterPath="$PROJECT_DIR$/flex_tokens.l" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/y.output" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/y.tab.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/y.tab.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/yacc_syntax.y" beforeDir="false" afterPath="$PROJECT_DIR$/yacc_syntax.y" afterDir="false" />
-    </list>
+    <list default="true" id="af251975-4881-49ab-856f-6f2727570dbe" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -83,8 +26,9 @@
         <counts>
           <entry key="project.closed" value="1" />
           <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -93,6 +37,7 @@
           <entry key="Makefile2" value="1" />
           <entry key="c" value="4" />
           <entry key="h" value="4" />
+          <entry key="how origingg[A" value="1" />
           <entry key="l" value="5" />
           <entry key="md" value="4" />
           <entry key="output" value="5" />
@@ -105,7 +50,7 @@
         <counts>
           <entry key="CMakeLists.txt" value="3" />
           <entry key="ObjectiveC" value="8" />
-          <entry key="PLAIN_TEXT" value="24" />
+          <entry key="PLAIN_TEXT" value="25" />
           <entry key="YAML" value="1" />
         </counts>
       </usages-collector>
@@ -127,12 +72,12 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/yacc_syntax.y">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="457">
-              <caret line="733" lean-forward="true" selection-start-line="733" selection-end-line="733" />
+            <state relative-caret-position="491">
+              <caret line="733" selection-start-line="733" selection-end-line="733" />
             </state>
           </provider>
         </entry>
@@ -158,7 +103,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/flex_tokens.l">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
+            <state relative-caret-position="1020">
               <caret line="60" column="34" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="34" />
             </state>
           </provider>
@@ -167,7 +112,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/yacc_syntax.tab.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
+            <state relative-caret-position="1734">
               <caret line="102" column="9" selection-start-line="102" selection-start-column="9" selection-end-line="102" selection-end-column="9" />
             </state>
           </provider>
@@ -176,7 +121,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/yacc_syntax.output">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-107506">
+            <state relative-caret-position="13073">
               <caret line="769" column="5" selection-start-line="769" selection-start-column="5" selection-end-line="769" selection-end-column="5" />
             </state>
           </provider>
@@ -265,11 +210,6 @@
               <item name="lex-yacc-template" type="b2602c69:ProjectViewProjectNode" />
               <item name="lex-yacc-template" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="lex-yacc-template" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lex-yacc-template" type="462c0819:PsiDirectoryNode" />
-              <item name="cmake-build-debug" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -332,16 +272,17 @@
       <updated>1539449521719</updated>
       <workItem from="1539449526189" duration="53000" />
       <workItem from="1539449603747" duration="22869000" />
+      <workItem from="1539485023212" duration="1064000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22922000" />
+    <option name="totallyTimeSpent" value="23986000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12739871" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12846482" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="0" sideWeight="0.49946696" weight="0.37418655" />
@@ -377,16 +318,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/y.tab.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-16022" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/y.tab.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1113" />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/y.tab.c" />
+    <entry file="file://$PROJECT_DIR$/y.tab.h" />
     <entry file="file://$PROJECT_DIR$/LEX_YACC_GCC.BAT">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -394,9 +327,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/y.output">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/y.output" />
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-184" />
@@ -416,13 +347,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/in.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/cygwin64/usr/include/w32api/evntprov.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
@@ -437,31 +361,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/flex_tokens.l">
+    <entry file="file://$PROJECT_DIR$/in.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="60" column="34" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="34" />
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/yacc_syntax.output">
+    <entry file="file://$PROJECT_DIR$/flex_tokens.l">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-107506">
-          <caret line="769" column="5" selection-start-line="769" selection-start-column="5" selection-end-line="769" selection-end-column="5" />
+        <state relative-caret-position="1020">
+          <caret line="60" column="34" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/yacc_syntax.tab.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
+        <state relative-caret-position="1734">
           <caret line="102" column="9" selection-start-line="102" selection-start-column="9" selection-end-line="102" selection-end-column="9" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/yacc_syntax.output">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13073">
+          <caret line="769" column="5" selection-start-line="769" selection-start-column="5" selection-end-line="769" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/how origingg[A">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/yacc_syntax.y">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="733" lean-forward="true" selection-start-line="733" selection-end-line="733" />
+        <state relative-caret-position="491">
+          <caret line="733" selection-start-line="733" selection-end-line="733" />
         </state>
       </provider>
     </entry>
